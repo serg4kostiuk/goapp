@@ -16,7 +16,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh "echo "deploy app on server""
+        sh "echo 'deploy app on a server'"
       }
     }
   }
