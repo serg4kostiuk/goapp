@@ -19,12 +19,12 @@ pipeline {
         sh "echo 'deploy app on a server'"
       }
     }
+    stage('Slack it'){
+       steps {
+         slackSend message: 'Hello, world'
+       }
+    }
   }
-post {
-  success {
-	slackSend "Build Started - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
-  }
-}
 }
 
 
