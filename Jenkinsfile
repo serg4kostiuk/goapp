@@ -4,6 +4,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        sh "whoami && ls -lsa"
         sh "go version"
         sh "go build main.go"
       }
@@ -11,6 +12,11 @@ pipeline {
     stage('Test') {
       steps {
         sh "go test"
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh "echo "deploy app on server""
       }
     }
   }
